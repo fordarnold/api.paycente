@@ -108,6 +108,14 @@ GET /transactions/
 }
 ```
 
-References:
+## References:
 
 http://net.tutsplus.com/tutorials/php/laravel-4-a-start-at-a-restful-api/
+
+## Installation
+
+* Clone this repo from github.
+* In your localhost, run ```bash composer install ```
+  This installs composer dependencies needed for the app to run.
+
+* You are ready to go
