@@ -5,7 +5,7 @@ api.paycente
 
 This is the first version of the PayCente API.
 
-This platform is, for now, built on Laravel, PHP. Future development will occur with Python, 
+This platform is, for now, built on Laravel, PHP. Future development will occur with Python,
 or any other language that is up to the task of building a REST API easily.
 
 ### API Requests
@@ -15,7 +15,7 @@ You can send API requests to http://api.paycente.pagodabox.com/ Below are the re
 * Outgoing Payment
 * Transaction Log
 
-For this demo, we shall not consider users that have access to the API (API User Auth and Permissions). 
+For this demo, we shall not consider users that have access to the API (API User Auth and Permissions).
 That will come in version 2 of the API. For now, lets do enough to get a demo API.
 
 ### API Responses
@@ -26,13 +26,13 @@ These responses are to be returned in JSON format.
 This will tell the API to make a new incoming payment.
 
 **Request**
-  
+
 ```bash
 POST /payments/incoming/
 ```
-    
+
 **Response**
-  
+
 ```bash
 {
   "id": "120012",
@@ -40,18 +40,18 @@ POST /payments/incoming/
   "currency": "UGX"
 }
 ```
-    
+
 #### Outgoing Payment
 This will tell the API to make a new outgoing payment.
 
 **Request**
-  
+
 ```bash
 POST /payments/outgoing/
 ```
-    
+
 **Response**
-  
+
 ```bash
 {
   "id": "110299",
@@ -71,7 +71,7 @@ GET /transactions/
 ```
 
 **Response**
- 
+
 ```bash
 {
   "2013-03-13": [
@@ -89,7 +89,7 @@ GET /transactions/
       "paid_to": "256774123456"
     }
   ],
-  
+
   "2013-03-12": [
     {
       "id": "120982",
@@ -107,4 +107,7 @@ GET /transactions/
   ]
 }
 ```
-    
+
+References:
+
+http://net.tutsplus.com/tutorials/php/laravel-4-a-start-at-a-restful-api/
