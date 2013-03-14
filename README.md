@@ -25,58 +25,86 @@ These responses are to be returned in JSON format.
 #### Incoming Payment
 This will tell the API to make a new incoming payment.
 
-  **Request**
+**Request**
   
-    POST /payments/incoming/
+```bash
+POST /payments/incoming/
+```
     
-  **Response**
+**Response**
   
-    {
-        "id": "120012",
-        "amount": "120000",
-        "currency": "UGX"
-    }
-
+```bash
+{
+  "id": "120012",
+  "amount": "120000",
+  "currency": "UGX"
+}
+```
+    
 #### Outgoing Payment
 This will tell the API to make a new outgoing payment.
 
-  **Request**
+**Request**
   
-    POST /payments/outgoing/
+```bash
+POST /payments/outgoing/
+```
     
-  **Response**
+**Response**
   
-    {
-        "id": "110299",
-        "amount": "120000",
-        "currency": "UGX",
-        "paid_to": "256774123456"
-    }
+```bash
+{
+  "id": "110299",
+  "amount": "120000",
+  "currency": "UGX",
+  "paid_to": "256774123456"
+}
+```
 
 #### Transaction Log
 Requests all transaction logs stored with PayCente.
 
-  **Request**
-  
-    GET /transactions/
-    
-  **Response**
-  
+**Request**
+
+```bash
+GET /transactions/
+```
+
+**Response**
+ 
+```bash
+{
+  "2013-03-13": [
     {
-        "transaction_logs": [
-            {
-                "id": "120012",
-                "amount": "120000",
-                "currency": "UGX",
-                "type": "payments/incoming"
-            },
-            {
-                "id": "110299",
-                "amount": "120000",
-                "currency": "UGX",
-                "type": "payments/outgoing",
-                "paid_to": "256774123456"
-            }
-        ]
+      "id": "120012",
+      "amount": "120000",
+      "currency": "UGX",
+      "type": "payments/incoming"
+    },
+    {
+      "id": "110299",
+      "amount": "120000",
+      "currency": "UGX",
+      "type": "payments/outgoing",
+      "paid_to": "256774123456"
     }
+  ],
+  
+  "2013-03-12": [
+    {
+      "id": "120982",
+      "amount": "110000",
+      "currency": "UGX",
+      "type": "payments/incoming"
+    },
+    {
+      "id": "110299",
+      "amount": "120000",
+      "currency": "UGX",
+      "type": "payments/outgoing",
+      "paid_to": "256774123456"
+    }
+  ]
+}
+```
     
